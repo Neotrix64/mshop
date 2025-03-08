@@ -11,7 +11,6 @@
 - [Uso](#uso)
 - [Estructura del Proyecto](#estructura-del-proyecto)
 - [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
 - [Contacto](#contacto)
 
 ## 💡 Descripción del Proyecto
