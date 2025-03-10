@@ -45,7 +45,7 @@ function Footer() {
                                 key={index}
                                 src={social.src}
                                 alt={social.alt}
-                                className="size-6 hover:scale-110 ease-in-out duration-300"
+                                className="size-6 hover:scale-110 ease-in-out duration-300 hover:cursor-pointer"
                             />
                         ))}
                     </div>
