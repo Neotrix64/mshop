@@ -1,28 +1,30 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './index.css'
-import Shop from './pages/Shop'
-import Lenis from '@studio-freight/lenis'
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router"; // Importa desde react-router-dom, no 'react-router'
+import "./index.css";
+import Shop from "./pages/Shop";
+import Lenis from "@studio-freight/lenis";
+import NotFound from "./pages/NotFound";
 
 function App() {
+  useEffect(() => {
+    const lenis = new Lenis();
 
-  useEffect( () =>{
-  const lenis = new Lenis()
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
 
-function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-}
-
-requestAnimationFrame(raf)
-  }, [])
+    requestAnimationFrame(raf);
+  }, []);
 
   return (
-    <>
-    <Shop/>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Shop />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
