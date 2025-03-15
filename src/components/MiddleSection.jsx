@@ -3,6 +3,7 @@ import Tittles from "./SubComponents/Tittles";
 import Categories from "./SubComponents/Categories";
 import TrendingProducts from "./SubComponents/TrendingProducts";
 import Footer from "./Footer";
+import SectionBanner from "./SubComponents/SectionBanner";
 
 function MiddleSection() {
   return (
@@ -23,6 +24,8 @@ function MiddleSection() {
           <Categories parrafo={"Reacondicionado"} estilo={"xl:block hidden"}/>
           <Categories parrafo={"Tablets"} estilo={"xl:block hidden"}/>
         </div>
+
+        <SectionBanner/>
 
         <Tittles Titulo={"Our Trending Products"} Descripcion={"Take a pick of our most loved products by our costumers"}/>
         <TrendingProducts/>
