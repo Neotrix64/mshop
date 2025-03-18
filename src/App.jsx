@@ -4,6 +4,8 @@ import "./index.css";
 import Shop from "./pages/Shop";
 import Lenis from "@studio-freight/lenis";
 import NotFound from "./pages/NotFound";
+import PcId from "./pages/PcID"
+import ShopCategories from "./pages/ShopCategories";
 
 function App() {
   useEffect(() => {
@@ -22,6 +24,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Shop />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/pc/:id" element={<PcId/>}/>
+        <Route path="categories/:categoria" element={<ShopCategories/>}/>
       </Routes>
     </BrowserRouter>
   );

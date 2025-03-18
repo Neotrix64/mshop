@@ -1,7 +1,11 @@
+import { Link, useNavigate } from "react-router";
+
 function TrendingProducts() {
+    const navigate = useNavigate();
 
     const pcs = [
         {
+            id: "0",
             grade: "Grade A+",
             discount: "50% off",
             name: "Asus Laptop",
@@ -11,6 +15,7 @@ function TrendingProducts() {
             imageUrl: "https://dlcdnwebimgs.asus.com/gain/ac5773ae-2d6b-4d72-bc07-62cbdfacd375/"
         },
         {
+            id: "1",
             grade: "Grade A",
             discount: "30% off",
             name: "HP Spectre x360",
@@ -20,6 +25,7 @@ function TrendingProducts() {
             imageUrl: "https://dlcdnwebimgs.asus.com/gain/ac5773ae-2d6b-4d72-bc07-62cbdfacd375/"
         },
         {
+            id: "2",
             grade: "Grade B",
             discount: "20% off",
             name: "Dell XPS 13",
@@ -29,6 +35,7 @@ function TrendingProducts() {
             imageUrl: "https://dlcdnwebimgs.asus.com/gain/ac5773ae-2d6b-4d72-bc07-62cbdfacd375/"
         },
         {
+            id: "3",
             grade: "Grade A",
             discount: "40% off",
             name: "Lenovo ThinkPad X1",
@@ -38,6 +45,7 @@ function TrendingProducts() {
             imageUrl: "https://dlcdnwebimgs.asus.com/gain/ac5773ae-2d6b-4d72-bc07-62cbdfacd375/"
         },
         {
+            id: "4",
             grade: "Grade A+",
             discount: "60% off",
             name: "Apple MacBook Pro",
@@ -52,6 +60,10 @@ function TrendingProducts() {
     const limit = 4; // Limite de productos a mostrar
     const limitedPcs = pcs.slice(0, limit); // Se limita el array a los primeros 'limit' productos
 
+    const handleRedirection = (valorId) =>{
+        navigate(`pc/${valorId}`)
+    }
+
     return (
         <div className="flex justify-center">
             <div className="pc flex flex-wrap justify-center gap-4">
@@ -59,6 +71,7 @@ function TrendingProducts() {
                     <div
                         key={index}
                         className="caja w-64 h-[400px] flex flex-col bg-white shadow-lg hover:cursor-pointer p-4"
+                        onClick={() => handleRedirection(pc.id)}
                     >
                         <div className="flex justify-between etiquetas z-10 mt-3 w-full">
                             <div className="bg-black text-white p-0.5 px-3 font-semibold">
