@@ -18,11 +18,12 @@ function TrendingProducts() {
             id: "1",
             grade: "Grade A",
             discount: "30% off",
-            name: "HP Spectre x360",
-            description: "Premium Convertible Laptop",
+            name: "MSI Katana",
+            description: "Premium Gaming Laptop",
             Price: "999.00$",
             rate: "Rated 4.5/5",
-            imageUrl: "https://dlcdnwebimgs.asus.com/gain/ac5773ae-2d6b-4d72-bc07-62cbdfacd375/"
+            imageUrl: "https://korsaka.com/wp-content/uploads/2024/05/Msi-GF66.jpg",
+            imageCollage: ["https://korsaka.com/wp-content/uploads/2024/05/Msi-GF66.jpg", "https://imggraficos.gruporeforma.com/2022/05/Laptops-gamer-asus-hot-sale-2022-2.png", "https://korsaka.com/wp-content/uploads/2024/05/Msi-GF66.jpg"]
         },
         {
             id: "2",
@@ -70,7 +71,7 @@ function TrendingProducts() {
                 {limitedPcs.map((pc, index) => (
                     <div
                         key={index}
-                        className="caja w-64 h-[400px] flex flex-col bg-white shadow-lg hover:cursor-pointer p-4"
+                        className="caja w-64 h-[340px] flex flex-col bg-white shadow-lg hover:cursor-pointer p-4"
                         onClick={() => handleRedirection(pc.id)}
                     >
                         <div className="flex justify-between etiquetas z-10 mt-3 w-full">
@@ -86,30 +87,29 @@ function TrendingProducts() {
                             <img
                                 src={pc.imageUrl}
                                 alt={pc.name}
-                                className="w-32 h-32 object-cover"
+                                className="w-32 h-32 object-contain"
                             />
                         </div>
 
                         {/* Ajustar el contenido dentro de la tarjeta */}
                         <div className="information flex flex-col flex-grow justify-between">
-                            <div className="flex items-center gap-2 name-and-colors mb-2">
+                            <div className="flex items-center gap-2 name-and-colors">
                                 <h1 className="text-xl font-bold tracking-widest mr-2">
                                     {pc.name}
                                 </h1>
-                                <div className="size-3 rounded-full mt-2 bg-blue-500"></div>
-                                <div className="size-3 rounded-full mt-2 bg-black"></div>
-                                <div className="size-3 rounded-full mt-2 bg-red-500"></div>
+                                <p className="text-2xl font-semibold">{pc.Price}</p>
+
                             </div>
 
-                            <p className="text-sm mb-2">{pc.description}</p>
+                            {/* <p className="text-sm mb-2">{pc.description}</p> */}
 
-                            <div className="flex justify-between rate-and-prices mb-1">
+                            <div className="flex justify-between rate-and-prices ">
                                 <p>{pc.rate}</p>
-                                <p className="text-2xl font-semibold">{pc.Price}</p>
+                                {/* <p className="text-2xl font-semibold">{pc.Price}</p> */}
                             </div>
 
                             {/* Botones */}
-                            <div className="flex justify-between w-full mt-auto">
+                            <div className="flex justify-between w-full">
                                 <button className="text-md font-bold tracking-wider">Add to Chart</button>
                                 <button className="bg-black text-white p-1 px-6 rounded-full">Buy Now</button>
                             </div>

@@ -1,6 +1,6 @@
-function NavBar() {
+function NavBar({estilo}) {
     return (
-      <div className="w-full h-28 bg-[#292828] text-white fixed top-0 z-30">
+      <div className={`w-full h-28 bg-[#292828] text-white fixed top-0 z-30 ${estilo}`}>
         <div className="upper-part flex justify-around gap-64 mb-3">
           <p className="text-white text-sm">
             Season Sale 20% off discount on laptops
